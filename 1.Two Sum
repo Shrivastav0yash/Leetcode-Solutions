@@ -1,0 +1,18 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> ans;
+        int n=nums.size(); //Find size
+        for(int i=0; i<n; i++){ 
+            int x=target-nums[i];  //value for second index is calculated by target-current element
+            for(int j=i+1; j<n; j++){
+                if(x==nums[j]){
+                    ans.push_back(i);
+                    ans.push_back(j);
+                    break; //when sum is find break the loop, not need to go further
+                }
+            }
+        }
+        return ans;
+    }
+};
