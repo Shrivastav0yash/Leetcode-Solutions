@@ -1,0 +1,25 @@
+class Solution {
+public:
+    bool uniqueOccurrences(vector<int>& arr) {
+        map<int,int> m;
+        int n = arr.size();
+        for(int i=0;i<n;i++)
+            m[arr[i]]++;
+        
+        map<int,int> q;
+        
+        
+        for(auto p : m)
+        {
+            q[p.second]++;
+        }
+        
+        for(auto o : q)
+        {
+            if(o.second>1)
+                return false;
+        }
+        
+        return true;
+    }
+};
