@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int bitwiseComplement(int n) {
+        int m = n;
+        int ans;
+        int any = 0;
+        if(n==0) return 1; // edge case
+        while(m!=0)
+        {
+            any = (any << 1) | 1;///left shift
+            m = m >> 1; //right shift
+        }
+        
+        
+        ans = (~n) & any; //formula
+        return ans;
+    }
+};
