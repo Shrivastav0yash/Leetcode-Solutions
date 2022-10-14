@@ -1,0 +1,31 @@
+class Solution {
+public:
+    int maxProduct(vector<int>& nums) {
+        int n = nums.size();
+        int pro = 1;
+        int x = INT_MIN;
+        
+        //left to right traverse
+        for(auto m : nums)
+        {
+            pro = pro * m;
+            x = max(pro,x);
+            if(pro == 0)
+                pro = 1;
+            
+        }
+        
+        //right to left traverse
+        pro = 1;
+        
+        for(int i=n-1;i>=0;i--)
+        {
+            pro = pro * nums[i];
+            x = max(pro,x);
+            if(pro == 0)
+                pro =1;
+        }
+        
+        return x;
+    }
+};
