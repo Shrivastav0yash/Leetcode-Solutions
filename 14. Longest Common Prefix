@@ -1,0 +1,26 @@
+class Solution {
+public:
+    string Find(string p, string q)
+    {
+        int x =  p.length();
+        int y = q.length();
+        int i =0,j =0;
+        while(i<x && j<y)
+        {
+            if(p[i]!=q[j])
+                break;
+            i++;
+            j++;
+        }
+        return p.substr(0,i);
+    }
+    string longestCommonPrefix(vector<string>& strs) {
+        int n = strs.size();
+        string x = strs[0];
+        for(int i=0;i<n;i++)
+        {
+            x = Find(x,strs[i]);
+        }
+        return x;
+    }
+};
