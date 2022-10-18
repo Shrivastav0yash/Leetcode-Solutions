@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        vector<int> vec(256,-1);
+        int left = 0;
+        int right = 0;
+        int len = 0;
+        int n = s.size();
+        
+        while(right<n)
+        {
+            if(vec[s[right]] != -1)   //check alhpabet is there or not by its ascii value
+                left = max(vec[s[left]] + 1, left); // update left by check jump 
+            vec[s[right]] = right; //update new index
+            len = max(len , right - left + 1); //find length
+            right++; /shift
+        }
+        
+        return len;
+    }
+};
