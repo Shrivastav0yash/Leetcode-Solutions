@@ -10,7 +10,7 @@ public:
         while(right<n)
         {
             if(vec[s[right]] != -1)   //check alhpabet is there or not by its ascii value
-                left = max(vec[s[left]] + 1, left); // update left by check jump 
+                left = max(vec[s[right]] + 1, left); // update left by check jump 
             vec[s[right]] = right; //update new index
             len = max(len , right - left + 1); //find length
             right++; /shift
