@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        map<int,int> m,n;
+        for(auto x : nums1)
+            m[x]++;
+        for(auto y : nums2)
+            n[y]++;
+        
+        vector<int> ans;
+        for(auto q : m)
+        {
+            int a = q.first;
+            for(auto p : n)
+            {
+                if(a == p.first)
+                    ans.push_back(a);
+            }
+        }
+        
+        return ans;
+    }
+};
