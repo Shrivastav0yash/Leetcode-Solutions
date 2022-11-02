@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int distributeCandies(vector<int>& candyType) {
+        map<int,int> m;
+        for(auto x:candyType)
+            m[x]++;
+        
+        int n = candyType.size();
+        
+        int c = m.size();
+        
+        return min(c,n/2);
+            
+    }
+};
