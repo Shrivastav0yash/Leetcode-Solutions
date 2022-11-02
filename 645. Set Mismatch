@@ -1,0 +1,31 @@
+class Solution {
+public:
+    vector<int> findErrorNums(vector<int>& nums) {
+        vector<int> ans;
+        int x;
+        int y;
+        unordered_map<int,int> m;
+        for(auto s : nums)
+            m[s]++;
+        
+        for(auto j : m)
+        {
+            if(j.second == 2)
+                y = j.first;
+        }
+        
+        for(int i=1;i<=nums.size();i++)
+        {
+            auto s = m.find(i);
+            if(s == m.end())
+            {
+                x = i;
+            }
+        }
+        
+        ans.push_back(y);
+        ans.push_back(x);
+        
+        return ans;
+    }
+};
